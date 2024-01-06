@@ -4,15 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        r = []
-        t = len(nums) // 2
-        i = 0
-        while (i < t):
-            a = min(nums)
-            nums.remove(a)
-            b = min(nums)
-            nums.remove(b)
-            r.append(b)
-            r.append(a)
-            i += 1
-        return r
+        nums.sort()
+        for i in range(0, len(nums), 2):
+            t = nums[i]
+            nums[i] = nums[i + 1]
+            nums[i + 1] = t
+        return nums
