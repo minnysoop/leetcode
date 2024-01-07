@@ -43,17 +43,6 @@ public:
         sort(vi1.begin(), vi1.end());
         sort(vi2.begin(), vi2.end());
         
-        for (int i = 0; i < vi1.size(); i++){
-            cout << vi1[i] << endl;
-        }
-        cout << endl;
-        
-        for (int i = 0; i < vi2.size(); i++){
-            cout << vi2[i] << endl;
-        }
-        cout << endl;
-        
-        
         return vi1 == vi2 && vc1 == vc2;
         
     }
