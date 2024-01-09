@@ -1,19 +1,19 @@
 class Solution {
 public:
     int strStr(string haystack, string needle) {
+        
         int hn = haystack.size();
         int nn = needle.size();
-        for (int i=0;i<hn-nn+1;i++){
-            string s = "";
-            for (int j=i; j<i+nn;j++){
-                s += haystack[j];
-            }
-            
-            if (s == needle){
-                return i;
+        
+        int j = 0;
+        for (int i = 0; i < hn; i++){
+            if (haystack[i] == needle[0]){
+                string t = haystack.substr(i,nn);
+                if (t == needle){
+                    return i;
+                }
             }
         }
-        
         return -1;
     }
 };
