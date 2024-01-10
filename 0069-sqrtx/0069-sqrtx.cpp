@@ -7,7 +7,7 @@ public:
         ll r = 0;
         ll mid;
         while (lo <= hi){
-            mid = lo + (hi - lo) / 2;
+            mid = (hi + lo) / 2;
             if (mid * mid == x){
                 return mid;
             }
