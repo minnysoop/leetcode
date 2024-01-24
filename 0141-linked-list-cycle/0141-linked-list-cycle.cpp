@@ -9,16 +9,15 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        ListNode* i = head;
-        vector<ListNode*>vln;
-        while (i != nullptr){
-            for (int j=0;j<vln.size();j++){
-                if (vln[j] == i){
-                    return true;
-                }
+        ListNode* s = head;
+        ListNode* f = head;
+        while (f != nullptr && f->next != nullptr){
+            f = f->next->next;
+            s = s->next;
+            
+            if (s == f){
+                return true;
             }
-            vln.push_back(i);
-            i = i->next;
         }
         
         return false;
