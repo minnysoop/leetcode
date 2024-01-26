@@ -3,17 +3,15 @@ public:
     vector<int> countBits(int n) {
         vector<int>vb(n+1,0);
         
-        int i = 0;
+        int i = 1;
         while (i <= n){
-            
-            int c = i;
-            int o = 0;
-            while (c > 0){
-                o += c%2;
-                c /= 2;
+            if (i%2==0){
+                vb[i] = vb[i/2];
             }
-            
-            vb[i] = o;
+            else {
+                vb[i] = vb[i-1] + 1;
+            }
+        
             i++;
         }
         
